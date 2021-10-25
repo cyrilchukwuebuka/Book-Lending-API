@@ -8,21 +8,22 @@ const { StringDecoder } = require("string_decoder");
 const routeHandler = require("./lib/routehandler");
 
 const httpServer = http.createServer((req, res) => {
-    console.log(req)
-    console.log(`
-    `)
-    console.log(res)
+    // console.log(req)
+    // console.log(`
+    // `)
+    // console.log(res)
   //parse the incoming url
   const parsedurl = url.parse(req.url, true);
   //get the path name
   const pathname = parsedurl.pathname;
-  console.log(pathname)
+
   const trimedPath = pathname.replace(/^\/+|\/+$/g, "");
-  console.log(trimedPath)
+  
   //get the Http Method
   const method = req.method.toLowerCase();
   //get the query string
   const queryStringObj = parsedurl.query;
+  console.log(queryStringObj)
   //get the request headers
   const headers = req.headers;
 
@@ -51,8 +52,9 @@ const httpServer = http.createServer((req, res) => {
         : router.notfound;
     //use the chosen handler to handle the request
     chosenHandler(data, (statusCode, result) => {
+        console.log(data.query.bookname)
       statusCode = typeof statusCode === "number" ? statusCode : 200;
-      result = typeof res === "object" ? result : {};
+      result = typeof result === "object" ? result : {};
 
       const responseObj = JSON.stringify(result);
 
@@ -76,9 +78,9 @@ httpServer.listen(8080, () => {
 
 const router = {
   ping: routeHandler.ping,
-  books: routeHandler.Books,
-  user: routeHandler.User,
-  borrow: routeHandler.Borrow,
+  books: routeHandler._books,
+  users: routeHandler._users,
+  borrow: routeHandler._borrow,
   notfound: routeHandler.notfound,
 };
 
