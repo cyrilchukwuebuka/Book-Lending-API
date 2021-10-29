@@ -7,18 +7,17 @@ const url = require("url");
 const { StringDecoder } = require("string_decoder");
 const routeHandler = require("./lib/routehandler");
 
+
 const httpServer = http.createServer((req, res) => {
-    // console.log(req)
-    // console.log(`
-    // `)
-    // console.log(res)
+
   //parse the incoming url
   const parsedurl = url.parse(req.url, true);
+
   //get the path name
   const pathname = parsedurl.pathname;
 
   const trimedPath = pathname.replace(/^\/+|\/+$/g, "");
-  
+
   //get the Http Method
   const method = req.method.toLowerCase();
   //get the query string
@@ -26,6 +25,7 @@ const httpServer = http.createServer((req, res) => {
   console.log(queryStringObj)
   //get the request headers
   const headers = req.headers;
+  console.log(headers)
 
   const decoder = new StringDecoder("utf-8");
   var buffer = "";
@@ -84,7 +84,6 @@ const router = {
   notfound: routeHandler.notfound,
 };
 
-
 /**
  * Admin Function
  * Registering a user will require us creating another file
@@ -100,7 +99,8 @@ const router = {
  * 1. for creating a user  url = /createuser
  * 2. for user to borrow a book   url = /borrowbook
  * 3. for user to return a book    url = /returnbook
- * 
- * 
+ *
+ *
  * Returning a borrowed book should use a post request
  */
+
