@@ -1,5 +1,6 @@
-const helper = require("./helper");
-const fileUtil = require("./fileUtil");
+const helper = require("../lib/helper");
+const fileUtil = require("../lib/fileUtil");
+const routeHandler = {};
 
 //main book route object
 routeHandler.Books = {};

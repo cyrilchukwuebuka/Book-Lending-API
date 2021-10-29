@@ -1,11 +1,12 @@
-const fileUtil = require("./fileUtil");
+const fileUtil = require("../lib/fileUtil");
 const { booksDecrement, booksIncrement } = require("../lib/bookHelper");
-const { getUser, updateUser } = require("./userHelper");
+const { getUser, updateUser } = require("../lib/userHelper");
 const {
   getBorrowedBook,
   updateBorrowedBook,
   writeToBorrowBooks,
-} = require("./borrowedBookHelper");
+} = require("../lib/borrowedBookHelper");
+const routeHandler = {};
 
 // Borrow and Return Router
 routeHandler._borrow = (data, callback) => {
