@@ -3,5 +3,33 @@
   "lastname": "Chukwuebuka",
   "phoneNo": "08138579991",
   "email": "muofunanya3@gmail.com",
-  "books": []
+  "books": [
+    {
+      "name": "Pro javascript design patterns1",
+      "price": "51.99",
+      "author": "Harmes Diaz",
+      "publisher": "Apress",
+      "isbn_number": "978-1-59059-908-2",
+      "cover_image_url": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.kavoir.com%2Fwp-content%2Fuploads%2F2009%2F06%2FProJavaScriptDesignPatternsRecipesaProblemSolutionAp.jpg&f=1&nofb=1",
+      "bookId": "book7g240dbxwok44tnj6k79hi6nlpa6pg"
+    },
+    {
+      "name": "Javascript for Beginners",
+      "price": "5.99",
+      "author": "Carlson Kelly",
+      "publisher": "Longman",
+      "isbn_number": "890-1-59059-908-2",
+      "cover_image_url": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.kavoir.com%2Fwp-content%2Fuploads%2F2009%2F06%2FProJavaScriptDesignPatternsRecipesaProblemSolutionAp.jpg&f=1&nofb=1",
+      "bookId": "book8w7lhcyugxnb8zrtg7oa3f0sxleklp"
+    },
+    {
+      "name": "Javascript for Beginners",
+      "price": "5.99",
+      "author": "Carlson Kelly",
+      "publisher": "Longman",
+      "isbn_number": "890-1-59059-908-2",
+      "cover_image_url": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.kavoir.com%2Fwp-content%2Fuploads%2F2009%2F06%2FProJavaScriptDesignPatternsRecipesaProblemSolutionAp.jpg&f=1&nofb=1",
+      "bookId": "book8w7lhcyugxnb8zrtg7oa3f0sxleklp"
+    }
+  ]
 }

@@ -17,6 +17,11 @@ routeHandler.Books.post = (data, callback) => {
     !isNaN(parseInt(data.payload.price))
       ? data.payload.price
       : false;
+  var available =
+    typeof data.payload.available === "string" &&
+    !isNaN(parseInt(data.payload.available))
+      ? data.payload.available
+      : false;
   var author =
     typeof data.payload.author === "string" &&
     data.payload.author.trim().length > 0
@@ -33,7 +38,7 @@ routeHandler.Books.post = (data, callback) => {
       ? data.payload.isbn_number
       : false;
 
-  if (name && price && author && publisher && isbn_number) {
+  if (name && price && author && publisher && isbn_number && available) {
     const fileName = "book" + helper.generateRandomString(30);
     fileUtil.create("books", fileName, data.payload, (err) => {
       if (!err) {
@@ -42,6 +47,8 @@ routeHandler.Books.post = (data, callback) => {
         callback(400, { message: "couldn't add book" });
       }
     });
+  } else {
+    callback(400, { message: "couldn't add book" });
   }
 };
 
@@ -50,6 +57,7 @@ routeHandler.Books.get = (data, callback) => {
   if (data.query.bookname) {
     fileUtil.read("books", data.query.bookname, (err, data) => {
       if (!err && data) {
+        console.log(data)
         callback(200, { message: "book retrieved", data: data });
       } else {
         callback(404, {
