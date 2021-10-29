@@ -1,5 +1,11 @@
-const helper = require("./helper");
+const fileUtil = require("./fileUtil");
 const { booksDecrement, booksIncrement } = require("../lib/bookHelper");
+const { getUser, updateUser } = require("./userHelper");
+const {
+  getBorrowedBook,
+  updateBorrowedBook,
+  writeToBorrowBooks,
+} = require("./borrowedBookHelper");
 
 // Borrow and Return Router
 routeHandler._borrow = (data, callback) => {
@@ -16,7 +22,6 @@ routeHandler._borrow = (data, callback) => {
 // main borrow route object
 routeHandler.Borrow = {};
 
-// I might not be in need for this function in borrowing book
 routeHandler.Borrow.post = (data, callback) => {
   const borrowedBookid = data.query.borrowedBookid;
   const userId = data.query.userid;
