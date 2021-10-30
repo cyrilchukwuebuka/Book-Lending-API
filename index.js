@@ -83,23 +83,3 @@ const router = {
   borrow: routeHandler._borrow,
   notfound: routeHandler.notfound,
 };
-
-/**
- * Admin Function
- * Registering a user will require us creating another file
- * where we store the users we registered with there names and password
- * and the books collected from the library
- *
- * User Function
- * Requests for a book from the BOOKSHELF
- *
- *
- *
- * create three routes
- * 1. for creating a user  url = /createuser
- * 2. for user to borrow a book   url = /borrowbook
- * 3. for user to return a book    url = /returnbook
- *
- *
- * Returning a borrowed book should use a post request
- */
